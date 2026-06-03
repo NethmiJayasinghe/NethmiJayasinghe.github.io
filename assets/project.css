@@ -145,6 +145,21 @@ h2.section-title {
   background: linear-gradient(120deg, var(--accent), var(--accent-2));
 }
 
+/* results tables */
+.table-wrap { max-width: 860px; margin: 0 auto 20px; overflow-x: auto; }
+table.results { width: 100%; border-collapse: collapse; font-size: .86rem; min-width: 560px; }
+table.results th, table.results td { padding: 9px 11px; text-align: center; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.results thead th { font-weight: 600; color: var(--text); }
+table.results thead tr:last-child th { border-bottom: 2px solid var(--line); font-size: .8rem; color: var(--muted); }
+table.results td:first-child, table.results th:first-child,
+table.results td:nth-child(2), table.results th:nth-child(2) { text-align: left; }
+table.results .grp { border-left: 1px solid var(--line); }
+table.results tbody tr:hover { background: color-mix(in srgb, var(--accent) 5%, transparent); }
+table.results tr.ours { background: var(--accent-soft); }
+table.results tr.ours td { font-weight: 500; }
+table.results b { color: var(--accent); font-weight: 700; }
+table.results u { text-decoration-color: var(--muted); text-underline-offset: 2px; }
+
 /* bibtex */
 .bibtex pre {
   background: var(--code-bg); border: 1px solid var(--line); border-radius: 14px;

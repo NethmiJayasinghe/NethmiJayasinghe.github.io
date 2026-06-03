@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cerebellar-Inspired Residual Control — Nethmi Jayasinghe</title>
-<meta name="description" content="ICML 2026 — Cerebellar-Inspired Residual Control for Fault Recovery: From Inference-Time Adaptation to Structural Consolidation." />
+<title>Cerebellar-Inspired Residual Control - Nethmi Jayasinghe</title>
+<meta name="description" content="ICML 2026 - Cerebellar-Inspired Residual Control for Fault Recovery: From Inference-Time Adaptation to Structural Consolidation." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -29,7 +29,7 @@
     <h1>Cerebellar-Inspired Residual Control for Fault Recovery: From Inference-Time Adaptation to Structural Consolidation</h1>
     <p class="authors">
       <span class="a"><span class="me-author">Nethmi Jayasinghe</span><sup>1</sup></span>
-      <span class="a">Diana Gontero<sup>2</sup></span>
+      <span class="a">Diana Gontero<sup>1</sup></span>
       <span class="a">Spencer T. Brown<sup>2</sup></span>
       <span class="a">Vinod K. Sangwan<sup>3</sup></span>
       <span class="a">Mark C. Hersam<sup>3</sup></span>
@@ -61,7 +61,7 @@
   <div class="container">
     <div class="tldr">
       <span class="lbl">TL;DR</span>
-      <p>A frozen RL policy gets a lightweight, <b>cerebellum-inspired residual controller</b> that corrects faults <b>online, at inference time</b> — no retraining, no gradient updates to the base policy — recovering up to <b>+66%</b> performance under post-training disturbances.</p>
+      <p>A frozen RL policy gets a lightweight, <b>cerebellum-inspired residual controller</b> that corrects faults <b>online, at inference time</b> - no retraining, no gradient updates to the base policy - recovering up to <b>+66%</b> performance under post-training disturbances.</p>
     </div>
   </div>
 </section>
@@ -82,13 +82,13 @@
     <h2 class="section-title">Highlights</h2>
     <div class="stats" style="margin-bottom:28px;">
       <div class="stat"><div class="num">+66%</div><div class="cap">recovery on HalfCheetah-v5</div></div>
+      <div class="stat"><div class="num">+22%</div><div class="cap">recovery on Ant-v5</div></div>
       <div class="stat"><div class="num">+53%</div><div class="cap">recovery on Humanoid-v5</div></div>
-      <div class="stat"><div class="num">0</div><div class="cap">base-policy gradient updates</div></div>
     </div>
     <ul class="highlights">
       <li><b>Inference-time only.</b> Corrects faults during deployment without retraining or touching the frozen base policy.</li>
       <li><b>Cerebellar computational motifs.</b> High-dimensional feature expansion, parallel microzone residual pathways, and dual-timescale eligibility traces.</li>
-      <li><b>Conservative meta-adaptation.</b> A performance-driven gate regulates residual authority — acting under faults, staying quiet when behavior is nominal.</li>
+      <li><b>Conservative meta-adaptation.</b> A performance-driven gate regulates residual authority - acting under faults, staying quiet when behavior is nominal.</li>
       <li><b>Adaptation → consolidation.</b> Persistent corrections can be consolidated back into policy parameters for lasting robustness.</li>
     </ul>
   </div>
@@ -98,9 +98,71 @@
   <div class="container">
     <h2 class="section-title">Method Overview</h2>
     <figure class="figure">
-      <div class="fig-placeholder">Drop a method/architecture figure here →<br><code>assets/figs/cerebellar_method.png</code><br>(export from the paper, then replace this block with an &lt;img&gt;)</div>
-      <figcaption>A frozen RL policy is augmented by a parallel cerebellar residual pathway that learns fast, local corrections online.</figcaption>
+      <img src="../papers/ICML_2026_Paper/LinkedIn_Post.png" alt="Cerebellar residual controller architecture, robot benchmarks, and recovery results across fault families." />
+      <figcaption>A frozen RL policy is augmented by a parallel cerebellar residual controller that learns fast, local corrections online, recovering across actuator, dynamic, and environmental faults.</figcaption>
     </figure>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Results</h2>
+    <p class="sub">Mean &plusmn; std episodic return over 30 runs, one representative moderate severity per fault family. Robust SAC, OSI, and Offline Res. use training-time fault exposure; CMAC, LMS, and Ours adapt online at inference time. <b>Bold</b> = best, <u>underlined</u> = second-best.</p>
+
+    <div class="table-wrap">
+      <table class="results">
+        <thead>
+          <tr>
+            <th rowspan="2">Category</th><th rowspan="2">Method</th>
+            <th colspan="3" class="grp">HalfCheetah-v5</th>
+            <th colspan="3" class="grp">Ant-v5</th>
+          </tr>
+          <tr>
+            <th class="grp">Actuator</th><th>Dynamic</th><th>Environment</th>
+            <th class="grp">Actuator</th><th>Dynamic</th><th>Environment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Classic RL</td><td>SAC</td>
+            <td class="grp">3612 &plusmn; 594</td><td>5093 &plusmn; 1165</td><td>11958 &plusmn; 4085</td>
+            <td class="grp">4542 &plusmn; 907</td><td>3816 &plusmn; 1909</td><td>3796 &plusmn; 1397</td></tr>
+          <tr><td>Train with faults</td><td>Robust SAC</td>
+            <td class="grp">3093 &plusmn; 626</td><td>3491 &plusmn; 541</td><td>12315 &plusmn; 410</td>
+            <td class="grp">5278 &plusmn; 180</td><td>4001 &plusmn; 1203</td><td>3528 &plusmn; 1594</td></tr>
+          <tr><td>Fault-aware</td><td>SAC + OSI</td>
+            <td class="grp"><b>7548 &plusmn; 250</b></td><td><b>8810 &plusmn; 251</b></td><td>11738 &plusmn; 2350</td>
+            <td class="grp">3128 &plusmn; 711</td><td>3376 &plusmn; 1223</td><td>2207 &plusmn; 806</td></tr>
+          <tr><td>Residual</td><td>SAC + Offline Res.</td>
+            <td class="grp">3898 &plusmn; 200</td><td>5441 &plusmn; 824</td><td><u>12977 &plusmn; 1573</u></td>
+            <td class="grp">5220 &plusmn; 1300</td><td><b>4918 &plusmn; 1734</b></td><td>3323 &plusmn; 1840</td></tr>
+          <tr><td>Residual</td><td>SAC + CMAC</td>
+            <td class="grp">3855 &plusmn; 774</td><td>6052 &plusmn; 949</td><td>11011 &plusmn; 4821</td>
+            <td class="grp"><u>5324 &plusmn; 2403</u></td><td>4556 &plusmn; 1265</td><td><b>4985 &plusmn; 2019</b></td></tr>
+          <tr><td>Residual</td><td>SAC + Online LMS</td>
+            <td class="grp">4000 &plusmn; 782</td><td>5517 &plusmn; 1140</td><td>11672 &plusmn; 4184</td>
+            <td class="grp">4273 &plusmn; 1138</td><td>4712 &plusmn; 2176</td><td>2984 &plusmn; 499</td></tr>
+          <tr class="ours"><td>Residual</td><td>SAC + Ours</td>
+            <td class="grp"><u>7239 &plusmn; 2159</u></td><td><u>7502 &plusmn; 1281</u></td><td><b>19517 &plusmn; 3834</b></td>
+            <td class="grp"><b>5622 &plusmn; 1137</b></td><td><u>4728 &plusmn; 1447</u></td><td><u>4551 &plusmn; 2132</u></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap">
+      <table class="results">
+        <thead>
+          <tr><th rowspan="2">Method</th><th colspan="3" class="grp">Humanoid-v5</th></tr>
+          <tr><th class="grp">Actuator</th><th>Dynamic</th><th>Environment</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SAC</td><td class="grp">8168 &plusmn; 4702</td><td>10108 &plusmn; 5556</td><td>11099 &plusmn; 4909</td></tr>
+          <tr><td>Robust SAC</td><td class="grp"><u>11620 &plusmn; 6410</u></td><td><u>12597 &plusmn; 5633</u></td><td><u>14694 &plusmn; 2728</u></td></tr>
+          <tr><td>SAC + OSI</td><td class="grp">5754 &plusmn; 1771</td><td>7790 &plusmn; 1112</td><td>9265 &plusmn; 1064</td></tr>
+          <tr><td>SAC + Online LMS</td><td class="grp">8703 &plusmn; 5832</td><td>9687 &plusmn; 5554</td><td>12839 &plusmn; 3369</td></tr>
+          <tr class="ours"><td>SAC + Ours</td><td class="grp"><b>13981 &plusmn; 5624</b></td><td><b>15282 &plusmn; 5979</b></td><td><b>19825 &plusmn; 7932</b></td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
