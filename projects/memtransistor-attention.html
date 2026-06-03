@@ -67,15 +67,6 @@
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <figure class="figure">
-      <img src="../papers/EDL_2024_Paper/Transformer_SA_v2.png" alt="Dual-gated MoS2 memtransistor cross-section and the self-attention dataflow it accelerates by integrating query/key processing." />
-      <figcaption>The dual-gated MoS₂ memtransistor (left) integrates query/key processing within the self-attention dataflow (right), extracting attention scores directly from input tokens in a single step.</figcaption>
-    </figure>
-  </div>
-</section>
-
 <section class="alt">
   <div class="container">
     <h2 class="section-title">Abstract</h2>
@@ -106,7 +97,11 @@
 <section class="alt">
   <div class="container">
     <h2 class="section-title">Device & Dataflow</h2>
-    <figure class="figure">
+    <figure class="figure sm">
+      <img src="../papers/EDL_2024_Paper/Transformer_SA_v2.png" alt="Dual-gated MoS2 memtransistor cross-section and the self-attention dataflow it accelerates by integrating query/key processing." />
+      <figcaption>The dual-gated MoS₂ memtransistor (left) integrates query/key processing within the self-attention dataflow (right), extracting attention scores from input tokens in a single step.</figcaption>
+    </figure>
+    <figure class="figure sm">
       <img src="../papers/EDL_2024_Paper/Architecture.jpg" alt="Dual-gated memtransistor and crossbar dataflow that computes the attention score via charge accumulation, digitized in a single ADC step per token sequence." />
       <figcaption>Time-coded token voltages drive the dual-gated memtransistor crossbar; charge accumulation yields the attention score (~ X<sub>i</sub> Q K<sup>T</sup> X<sub>j</sub>), digitized in a single ADC step per token sequence.</figcaption>
     </figure>
@@ -117,7 +112,7 @@
   <div class="container">
     <h2 class="section-title">Results</h2>
     <p class="sub">Benchmarked on three time-series forecasting datasets: household energy appliances, electric-motor temperature, and electricity-transformer temperature.</p>
-    <figure class="figure">
+    <figure class="figure sm">
       <img src="../papers/EDL_2024_Paper/Fig_4_dataset.png" alt="Predictions vs ground truth for the memtransistor and conventional Transformer, training/validation loss curves, and prediction MSE across three datasets." />
       <figcaption>The memtransistor-based Transformer (a) tracks ground truth as well as a conventional Transformer (b), with comparable training/validation loss (c) and lower prediction MSE across all three datasets (d).</figcaption>
     </figure>

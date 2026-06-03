@@ -131,6 +131,10 @@ h2.section-title {
 .figure { max-width: 820px; margin: 8px auto 0; }
 .figure img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); box-shadow: var(--shadow); }
 .figure figcaption { color: var(--muted); font-size: .88rem; margin-top: 12px; text-align: center; }
+/* compact figures: cap both width and height, keep centered */
+.figure.sm { max-width: 600px; margin-left: auto; margin-right: auto; }
+.figure.sm img { width: auto; max-width: 100%; max-height: 380px; display: block; margin: 0 auto; }
+.figure.sm + .figure.sm { margin-top: 26px; }
 .fig-placeholder {
   width: 100%; aspect-ratio: 16/7; border: 2px dashed var(--line); border-radius: 14px;
   display: grid; place-items: center; color: var(--muted); font-size: .9rem; background: var(--surface);
