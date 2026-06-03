@@ -1,41 +1,36 @@
-# Nethmi Jayasinghe — personal website
+# Nethmi Jayasinghe
 
-Modern academic site: a homepage (`index.html`) + one Nerfies-style **project page per paper**.
-Plain HTML/CSS/JS — no build step, no dependencies. Has light/dark mode.
+**PhD Student · Electrical & Computer Engineering · University of Illinois Chicago**
 
-## Structure
-```
-index.html                              # homepage: bio, research themes, publications
-assets/project.css                      # shared style for project pages (+ dark mode)
-assets/figs/                            # drop paper figures here
-papers/                                 # paper PDFs
-projects/cerebellar-residual.html       # ICML 2026 project page
-projects/memtransistor-attention.html   # IEEE EDL 2024 project page
-```
+Reinforcement learning · adaptive decision-making · robust AI
 
-## Deploy to GitHub Pages
-1. Create a repo named **`<your-username>.github.io`** (for the root site) — or any repo if you want a `/repo` path.
-2. Copy the contents of this `site/` folder into the repo root.
-3. Commit & push to the `main` branch.
-4. In the repo: **Settings → Pages → Source: Deploy from branch → `main` / `root`**.
-5. Live at `https://<your-username>.github.io/` in ~1 minute.
+🌐 **[nethmijayasinghe.github.io](https://nethmijayasinghe.github.io/)**
 
-Local preview: `cd site && python3 -m http.server 8000` → open http://localhost:8000
+---
 
-## Fill in before going live
-- **Profile links** in `index.html` (hero section): replace `REPLACE_SCHOLAR_URL`,
-  `REPLACE_GITHUB_URL`, `REPLACE_LINKEDIN_URL` with your real URLs.
-- **Figures**: each project page has a dashed placeholder box. Export the figure from the
-  PDF to `assets/figs/...png`, then replace the `<div class="fig-placeholder">…</div>`
-  with `<img src="../assets/figs/yourfig.png" alt="...">`.
+I am a PhD student in Electrical & Computer Engineering at the University of Illinois Chicago,
+specializing in reinforcement learning, adaptive decision-making, and robust AI systems. My research
+focuses on adaptive agents that make real-time decisions under distribution shifts while maintaining
+stable behavior — recovering from faults and unexpected dynamics without retraining, with applications
+across robotic platforms. I also draw on brain-inspired principles to make learning faster, more stable,
+and more efficient.
 
-## Add the 3 in-review papers later
-Two steps each:
-1. **Homepage:** add an entry to the `publications` array in `index.html`
-   (set `status` to one of `published` / `accepted` — add a `review` badge if you want,
-   set `page:` to the new project page, list `authors` with `"__ME__"` for your name).
-2. **Project page:** copy `projects/cerebellar-residual.html`, change the title/authors/
-   abstract/BibTeX, save under `projects/<slug>.html`.
+### Research interests
+- **Reinforcement learning & adaptive agents** — online, inference-time adaptation without retraining
+- **Robotics & embodied learning** — real-time control across legged, wheeled, and humanoid robots
+- **Brain-inspired & robust learning** — cerebellar mechanisms for stable, efficient adaptation
 
-The homepage currently shows a discreet "+3 manuscripts under review" line
-(`underReviewCount` in `index.html`) with no titles/venues — change or delete as you like.
+### Selected publications
+- **Cerebellar-Inspired Residual Control for Fault Recovery: From Inference-Time Adaptation to Structural Consolidation** — *ICML 2026*
+- **Single-Step Extraction of Transformer Attention With Dual-Gated Memtransistor Crossbars** — *IEEE Electron Device Letters, 2024*
+
+### Links
+- 🌐 Website — https://nethmijayasinghe.github.io/
+- 🎓 Google Scholar — https://scholar.google.com/citations?user=x3gIuncAAAAJ&hl=en
+- 💼 LinkedIn — https://www.linkedin.com/in/nethmi-jayasinghe-767b4b188/
+- 💻 GitHub — https://github.com/NethmiJayasinghe
+- ✉️ Email — wjayas3@uic.edu
+
+---
+
+<sub>This repository hosts the source for my personal website. Maintainer notes are in [`MAINTAINING.md`](MAINTAINING.md).</sub>
