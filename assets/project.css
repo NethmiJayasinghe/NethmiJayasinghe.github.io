@@ -146,6 +146,11 @@ h2.section-title {
 }
 
 /* results tables */
+.tbl-title {
+  max-width: 840px; margin: 22px auto 9px; font-family: 'Newsreader', Georgia, serif;
+  font-weight: 600; font-size: 1.06rem; text-align: left;
+}
+table.results.even3 { table-layout: fixed; }   /* 4 equal columns: spreads the 3 fault columns to fill width */
 .table-wrap {
   max-width: 840px; margin: 0 auto 20px; overflow-x: auto;
   border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow);
@@ -168,9 +173,8 @@ table.results thead tr:last-child th {
 /* body */
 table.results tbody td { border-top: 1px solid var(--line); }
 table.results tbody tr:nth-child(even):not(.ours) { background: color-mix(in srgb, var(--text) 3%, transparent); }
-table.results td:first-child, table.results th:first-child,
-table.results td:nth-child(2), table.results th:nth-child(2) { text-align: left; }
-table.results td:first-child { color: var(--muted); font-size: .82rem; }   /* Category */
+table.results td:first-child, table.results th:first-child { text-align: left; font-weight: 500; }
+table.results td .sd { color: var(--muted); font-size: .8em; font-weight: 400; }   /* std */
 table.results .grp { border-left: 1px solid var(--line); }
 /* our method row */
 table.results tbody tr.ours { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); }

@@ -109,11 +109,12 @@
     <h2 class="section-title">Results</h2>
     <p class="sub">Mean &plusmn; std episodic return over 30 runs, one representative moderate severity per fault family. Robust SAC, OSI, and Offline Res. use training-time fault exposure; CMAC, LMS, and Ours adapt online at inference time. <b>Bold</b> = best, <u>underlined</u> = second-best.</p>
 
+    <h3 class="tbl-title">HalfCheetah-v5 &amp; Ant-v5</h3>
     <div class="table-wrap">
       <table class="results">
         <thead>
           <tr>
-            <th rowspan="2">Category</th><th rowspan="2">Method</th>
+            <th rowspan="2">Method</th>
             <th colspan="3" class="grp">HalfCheetah-v5</th>
             <th colspan="3" class="grp">Ant-v5</th>
           </tr>
@@ -123,43 +124,44 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Classic RL</td><td>SAC</td>
-            <td class="grp">3612 &plusmn; 594</td><td>5093 &plusmn; 1165</td><td>11958 &plusmn; 4085</td>
-            <td class="grp">4542 &plusmn; 907</td><td>3816 &plusmn; 1909</td><td>3796 &plusmn; 1397</td></tr>
-          <tr><td>Train with faults</td><td>Robust SAC</td>
-            <td class="grp">3093 &plusmn; 626</td><td>3491 &plusmn; 541</td><td>12315 &plusmn; 410</td>
-            <td class="grp">5278 &plusmn; 180</td><td>4001 &plusmn; 1203</td><td>3528 &plusmn; 1594</td></tr>
-          <tr><td>Fault-aware</td><td>SAC + OSI</td>
-            <td class="grp"><b>7548 &plusmn; 250</b></td><td><b>8810 &plusmn; 251</b></td><td>11738 &plusmn; 2350</td>
-            <td class="grp">3128 &plusmn; 711</td><td>3376 &plusmn; 1223</td><td>2207 &plusmn; 806</td></tr>
-          <tr><td>Residual</td><td>SAC + Offline Res.</td>
-            <td class="grp">3898 &plusmn; 200</td><td>5441 &plusmn; 824</td><td><u>12977 &plusmn; 1573</u></td>
-            <td class="grp">5220 &plusmn; 1300</td><td><b>4918 &plusmn; 1734</b></td><td>3323 &plusmn; 1840</td></tr>
-          <tr><td>Residual</td><td>SAC + CMAC</td>
-            <td class="grp">3855 &plusmn; 774</td><td>6052 &plusmn; 949</td><td>11011 &plusmn; 4821</td>
-            <td class="grp"><u>5324 &plusmn; 2403</u></td><td>4556 &plusmn; 1265</td><td><b>4985 &plusmn; 2019</b></td></tr>
-          <tr><td>Residual</td><td>SAC + Online LMS</td>
-            <td class="grp">4000 &plusmn; 782</td><td>5517 &plusmn; 1140</td><td>11672 &plusmn; 4184</td>
-            <td class="grp">4273 &plusmn; 1138</td><td>4712 &plusmn; 2176</td><td>2984 &plusmn; 499</td></tr>
-          <tr class="ours"><td>Residual</td><td>SAC + Ours</td>
-            <td class="grp"><u>7239 &plusmn; 2159</u></td><td><u>7502 &plusmn; 1281</u></td><td><b>19517 &plusmn; 3834</b></td>
-            <td class="grp"><b>5622 &plusmn; 1137</b></td><td><u>4728 &plusmn; 1447</u></td><td><u>4551 &plusmn; 2132</u></td></tr>
+          <tr><td>SAC</td>
+            <td class="grp">3612 <span class="sd">&plusmn; 594</span></td><td>5093 <span class="sd">&plusmn; 1165</span></td><td>11958 <span class="sd">&plusmn; 4085</span></td>
+            <td class="grp">4542 <span class="sd">&plusmn; 907</span></td><td>3816 <span class="sd">&plusmn; 1909</span></td><td>3796 <span class="sd">&plusmn; 1397</span></td></tr>
+          <tr><td>Robust SAC</td>
+            <td class="grp">3093 <span class="sd">&plusmn; 626</span></td><td>3491 <span class="sd">&plusmn; 541</span></td><td>12315 <span class="sd">&plusmn; 410</span></td>
+            <td class="grp">5278 <span class="sd">&plusmn; 180</span></td><td>4001 <span class="sd">&plusmn; 1203</span></td><td>3528 <span class="sd">&plusmn; 1594</span></td></tr>
+          <tr><td>SAC + OSI</td>
+            <td class="grp"><b>7548</b> <span class="sd">&plusmn; 250</span></td><td><b>8810</b> <span class="sd">&plusmn; 251</span></td><td>11738 <span class="sd">&plusmn; 2350</span></td>
+            <td class="grp">3128 <span class="sd">&plusmn; 711</span></td><td>3376 <span class="sd">&plusmn; 1223</span></td><td>2207 <span class="sd">&plusmn; 806</span></td></tr>
+          <tr><td>SAC + Offline Res.</td>
+            <td class="grp">3898 <span class="sd">&plusmn; 200</span></td><td>5441 <span class="sd">&plusmn; 824</span></td><td><u>12977</u> <span class="sd">&plusmn; 1573</span></td>
+            <td class="grp">5220 <span class="sd">&plusmn; 1300</span></td><td><b>4918</b> <span class="sd">&plusmn; 1734</span></td><td>3323 <span class="sd">&plusmn; 1840</span></td></tr>
+          <tr><td>SAC + CMAC</td>
+            <td class="grp">3855 <span class="sd">&plusmn; 774</span></td><td>6052 <span class="sd">&plusmn; 949</span></td><td>11011 <span class="sd">&plusmn; 4821</span></td>
+            <td class="grp"><u>5324</u> <span class="sd">&plusmn; 2403</span></td><td>4556 <span class="sd">&plusmn; 1265</span></td><td><b>4985</b> <span class="sd">&plusmn; 2019</span></td></tr>
+          <tr><td>SAC + Online LMS</td>
+            <td class="grp">4000 <span class="sd">&plusmn; 782</span></td><td>5517 <span class="sd">&plusmn; 1140</span></td><td>11672 <span class="sd">&plusmn; 4184</span></td>
+            <td class="grp">4273 <span class="sd">&plusmn; 1138</span></td><td>4712 <span class="sd">&plusmn; 2176</span></td><td>2984 <span class="sd">&plusmn; 499</span></td></tr>
+          <tr class="ours"><td>SAC + Ours</td>
+            <td class="grp"><u>7239</u> <span class="sd">&plusmn; 2159</span></td><td><u>7502</u> <span class="sd">&plusmn; 1281</span></td><td><b>19517</b> <span class="sd">&plusmn; 3834</span></td>
+            <td class="grp"><b>5622</b> <span class="sd">&plusmn; 1137</span></td><td><u>4728</u> <span class="sd">&plusmn; 1447</span></td><td><u>4551</u> <span class="sd">&plusmn; 2132</span></td></tr>
         </tbody>
       </table>
     </div>
 
+    <h3 class="tbl-title">Humanoid-v5</h3>
     <div class="table-wrap">
-      <table class="results">
+      <table class="results even3">
         <thead>
           <tr><th rowspan="2">Method</th><th colspan="3" class="grp">Humanoid-v5</th></tr>
           <tr><th class="grp">Actuator</th><th>Dynamic</th><th>Environment</th></tr>
         </thead>
         <tbody>
-          <tr><td>SAC</td><td class="grp">8168 &plusmn; 4702</td><td>10108 &plusmn; 5556</td><td>11099 &plusmn; 4909</td></tr>
-          <tr><td>Robust SAC</td><td class="grp"><u>11620 &plusmn; 6410</u></td><td><u>12597 &plusmn; 5633</u></td><td><u>14694 &plusmn; 2728</u></td></tr>
-          <tr><td>SAC + OSI</td><td class="grp">5754 &plusmn; 1771</td><td>7790 &plusmn; 1112</td><td>9265 &plusmn; 1064</td></tr>
-          <tr><td>SAC + Online LMS</td><td class="grp">8703 &plusmn; 5832</td><td>9687 &plusmn; 5554</td><td>12839 &plusmn; 3369</td></tr>
-          <tr class="ours"><td>SAC + Ours</td><td class="grp"><b>13981 &plusmn; 5624</b></td><td><b>15282 &plusmn; 5979</b></td><td><b>19825 &plusmn; 7932</b></td></tr>
+          <tr><td>SAC</td><td class="grp">8168 <span class="sd">&plusmn; 4702</span></td><td>10108 <span class="sd">&plusmn; 5556</span></td><td>11099 <span class="sd">&plusmn; 4909</span></td></tr>
+          <tr><td>Robust SAC</td><td class="grp"><u>11620</u> <span class="sd">&plusmn; 6410</span></td><td><u>12597</u> <span class="sd">&plusmn; 5633</span></td><td><u>14694</u> <span class="sd">&plusmn; 2728</span></td></tr>
+          <tr><td>SAC + OSI</td><td class="grp">5754 <span class="sd">&plusmn; 1771</span></td><td>7790 <span class="sd">&plusmn; 1112</span></td><td>9265 <span class="sd">&plusmn; 1064</span></td></tr>
+          <tr><td>SAC + Online LMS</td><td class="grp">8703 <span class="sd">&plusmn; 5832</span></td><td>9687 <span class="sd">&plusmn; 5554</span></td><td>12839 <span class="sd">&plusmn; 3369</span></td></tr>
+          <tr class="ours"><td>SAC + Ours</td><td class="grp"><b>13981</b> <span class="sd">&plusmn; 5624</span></td><td><b>15282</b> <span class="sd">&plusmn; 5979</span></td><td><b>19825</b> <span class="sd">&plusmn; 7932</span></td></tr>
         </tbody>
       </table>
     </div>
