@@ -378,6 +378,16 @@
       ]
     },
     {
+      status: "accepted",
+      venue: "CoRL 2026",
+      title: "When Robots Sleep: Offline Skill Consolidation for Shared-Policy Robot Learning",
+      page: "projects/when-robots-sleep.html",
+      authors: ["__ME__"],
+      links: [
+        { label: "Coming soon", href: "projects/when-robots-sleep.html", icon: "page" }
+      ]
+    },
+    {
       status: "published",
       venue: "Nature Communications · 2026",
       title: "Cerebellum-Inspired Memtransistors Enable Emergent Differentiation for Hardware-Efficient Novelty Detection",
@@ -404,7 +414,7 @@
   ];
 
   // discreet line about the rest - no titles / venues
-  const underReviewCount = 2;
+  const underReviewCount = 1;
 
   const icons = {
     pdf: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>',
@@ -436,8 +446,9 @@
       </article>`;
     }).join("");
 
-    document.getElementById("moreNote").textContent =
-      `+ ${underReviewCount} additional first-author manuscripts currently under review.`;
+    document.getElementById("moreNote").textContent = underReviewCount === 1
+      ? `+ 1 additional first-author manuscript currently under review.`
+      : `+ ${underReviewCount} additional first-author manuscripts currently under review.`;
   }
   renderPubs();
 
