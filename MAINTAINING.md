@@ -1,7 +1,7 @@
 # Maintaining this site
 
 Personal academic site: a homepage (`index.html`) + one project page per paper.
-Plain HTML/CSS/JS — no build step, no dependencies. Light/dark mode.
+Plain HTML/CSS/JS - no build step, no dependencies. Light/dark mode.
 
 ## Structure
 ```
@@ -28,7 +28,7 @@ Local preview: `python3 -m http.server 8000` → http://localhost:8000
    title / authors / abstract / results / BibTeX, save under `projects/<slug>.html`.
 
 The homepage shows a discreet "+N manuscripts under review" line
-(`underReviewCount` in `index.html`) — update or remove as needed.
+(`underReviewCount` in `index.html`) - update or remove as needed.
 
 ## Conventions
 - Use hyphens (`-`), not em-dashes (`—`).
