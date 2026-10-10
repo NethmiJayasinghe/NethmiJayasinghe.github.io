@@ -141,6 +141,10 @@ h2.section-title {
   text-align: center; padding: 20px;
 }
 
+/* videos */
+.figure video { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); box-shadow: var(--shadow); background: #fff; }
+.figure.video + .tbl-title { margin-top: 34px; }
+
 /* highlights */
 .highlights { max-width: 740px; margin: 0 auto; padding-left: 0; list-style: none; }
 .highlights li { position: relative; padding-left: 30px; margin-bottom: 13px; }
@@ -187,6 +191,9 @@ table.results .grp { border-left: 1px solid var(--line); }
 table.results tbody tr.ours { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); }
 table.results tbody tr.ours td { font-weight: 600; color: var(--text); }
 table.results tbody tr.ours td:first-child { color: var(--accent); }
+/* oracle reference row + table footnote */
+table.results tbody tr.oracle td { color: var(--muted); font-style: italic; border-top: 2px solid var(--line); }
+.tbl-note { max-width: 840px; margin: 0 auto; color: var(--muted); font-size: .88rem; text-align: center; }
 /* best / second-best */
 table.results b { color: var(--accent); font-weight: 700; }
 table.results u { text-decoration-color: var(--muted); text-underline-offset: 3px; }
