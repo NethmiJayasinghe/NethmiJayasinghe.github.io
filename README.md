@@ -1,6 +1,6 @@
 # Nethmi Jayasinghe
 
-**PhD Student · Electrical & Computer Engineering · University of Illinois Chicago**
+**PhD Candidate · Electrical & Computer Engineering · University of Illinois Chicago**
 
 Reinforcement learning · adaptive decision-making · robust AI
 
@@ -8,7 +8,7 @@ Reinforcement learning · adaptive decision-making · robust AI
 
 ---
 
-I am a PhD student in Electrical & Computer Engineering at the University of Illinois Chicago,
+I am a PhD candidate in Electrical & Computer Engineering at the University of Illinois Chicago,
 specializing in reinforcement learning, adaptive decision-making, and robust AI systems. My research
 focuses on adaptive agents that make real-time decisions under distribution shifts while maintaining
 stable behavior - recovering from faults and unexpected dynamics without retraining, with applications
